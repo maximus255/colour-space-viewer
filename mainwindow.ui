@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>526</width>
+    <height>751</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>Colour space viewer</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QGroupBox" name="groupBox">
+        <property name="title">
+         <string>Colour space</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_2">
+         <item row="1" column="1">
+          <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,0">
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_2">
+             <item>
+              <widget class="QRadioButton" name="radioButton_rgb">
+               <property name="text">
+                <string>RGB</string>
+               </property>
+               <property name="checked">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QRadioButton" name="radioButton_hsv">
+               <property name="text">
+                <string>HSV</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QRadioButton" name="radioButton_hsl">
+               <property name="text">
+                <string>HSL</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QRadioButton" name="radioButton_ycbcr">
+               <property name="text">
+                <string>YCbCr</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QRadioButton" name="radioButton_hcy">
+               <property name="text">
+                <string>HCY</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_4">
+             <item>
+              <layout class="QGridLayout" name="gridLayout_3">
+               <item row="1" column="0">
+                <widget class="QLabel" name="label_title_b">
+                 <property name="text">
+                  <string>G</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QLabel" name="label_title_a">
+                 <property name="text">
+                  <string>R</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QLabel" name="label_title_c">
+                 <property name="text">
+                  <string>B</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <spacer name="verticalSpacer_2">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>40</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+    <item row="1" column="2">
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QSlider" name="horizontalSlider_c">
+        <property name="maximum">
+         <number>255</number>
+        </property>
+        <property name="pageStep">
+         <number>16</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_value_c">
+        <property name="minimumSize">
+         <size>
+          <width>30</width>
+          <height>0</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="3" column="0">
+     <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <item>
+       <widget class="QSlider" name="horizontalSlider_b">
+        <property name="maximum">
+         <number>255</number>
+        </property>
+        <property name="pageStep">
+         <number>16</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_value_b">
+        <property name="minimumSize">
+         <size>
+          <width>40</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="3" column="2">
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <item>
+       <widget class="QSlider" name="horizontalSlider_a">
+        <property name="maximum">
+         <number>255</number>
+        </property>
+        <property name="pageStep">
+         <number>16</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_value_a">
+        <property name="minimumSize">
+         <size>
+          <width>30</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="0" column="2">
+     <widget class="QGraphicsView" name="view_c">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>256</width>
+        <height>256</height>
+       </size>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="horizontalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="interactive">
+       <bool>false</bool>
+      </property>
+      <property name="sceneRect">
+       <rectf>
+        <x>0.000000000000000</x>
+        <y>0.000000000000000</y>
+        <width>256.000000000000000</width>
+        <height>256.000000000000000</height>
+       </rectf>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QGraphicsView" name="view_b">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>256</width>
+        <height>256</height>
+       </size>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="horizontalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="interactive">
+       <bool>false</bool>
+      </property>
+      <property name="sceneRect">
+       <rectf>
+        <x>0.000000000000000</x>
+        <y>0.000000000000000</y>
+        <width>256.000000000000000</width>
+        <height>256.000000000000000</height>
+       </rectf>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="2">
+     <widget class="QGraphicsView" name="view_a">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>256</width>
+        <height>256</height>
+       </size>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="interactive">
+       <bool>false</bool>
+      </property>
+      <property name="sceneRect">
+       <rectf>
+        <x>0.000000000000000</x>
+        <y>0.000000000000000</y>
+        <width>256.000000000000000</width>
+        <height>256.000000000000000</height>
+       </rectf>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <layout class="QHBoxLayout" name="horizontalLayout_5">
+      <item>
+       <widget class="QGraphicsView" name="colour_view">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>256</width>
+          <height>1</height>
+         </size>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::NoFrame</enum>
+        </property>
+        <property name="verticalScrollBarPolicy">
+         <enum>Qt::ScrollBarAlwaysOff</enum>
+        </property>
+        <property name="horizontalScrollBarPolicy">
+         <enum>Qt::ScrollBarAlwaysOff</enum>
+        </property>
+        <property name="interactive">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>horizontalSlider_c</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>label_value_c</receiver>
+   <slot>setNum(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>484</x>
+     <y>370</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>509</x>
+     <y>280</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalSlider_c</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>update_c(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>484</x>
+     <y>370</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>226</x>
+     <y>0</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioButton_rgb</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>set_colourspace_rgb()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>54</x>
+     <y>43</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>0</x>
+     <y>36</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioButton_hsv</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>set_colourspace_hsv()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>21</x>
+     <y>65</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>0</x>
+     <y>65</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioButton_hsl</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>set_colourspace_hsl()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>26</x>
+     <y>105</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>0</x>
+     <y>92</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioButton_ycbcr</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>set_colourspace_ycbcr()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>94</x>
+     <y>116</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>0</x>
+     <y>117</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalSlider_a</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>label_value_a</receiver>
+   <slot>setNum(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>484</x>
+     <y>743</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>518</x>
+     <y>743</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalSlider_b</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>label_value_b</receiver>
+   <slot>setNum(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>199</x>
+     <y>743</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>258</x>
+     <y>743</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalSlider_b</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>update_b(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>138</x>
+     <y>743</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>144</x>
+     <y>564</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalSlider_a</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>update_a(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>484</x>
+     <y>743</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>325</x>
+     <y>565</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioButton_hcy</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>set_colourspace_hcy()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>21</x>
+     <y>144</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-2</x>
+     <y>146</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>update_a(int)</slot>
+  <slot>set_colourspace_rgb()</slot>
+  <slot>set_colourspace_hsv()</slot>
+  <slot>set_colourspace_hsl()</slot>
+  <slot>set_colourspace_ycbcr()</slot>
+  <slot>update_b(int)</slot>
+  <slot>update_c(int)</slot>
+  <slot>set_colourspace_hcy()</slot>
+ </slots>
+</ui>
