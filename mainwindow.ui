@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>526</width>
-    <height>751</height>
+    <width>524</width>
+    <height>582</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -135,34 +135,7 @@
       </item>
      </layout>
     </item>
-    <item row="1" column="2">
-     <layout class="QHBoxLayout" name="horizontalLayout_2">
-      <item>
-       <widget class="QSlider" name="horizontalSlider_c">
-        <property name="maximum">
-         <number>255</number>
-        </property>
-        <property name="pageStep">
-         <number>16</number>
-        </property>
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLabel" name="label_value_c">
-        <property name="minimumSize">
-         <size>
-          <width>30</width>
-          <height>0</height>
-         </size>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item row="3" column="0">
+    <item row="4" column="0">
      <layout class="QHBoxLayout" name="horizontalLayout_4">
       <item>
        <widget class="QSlider" name="horizontalSlider_b">
@@ -192,7 +165,7 @@
       </item>
      </layout>
     </item>
-    <item row="3" column="2">
+    <item row="4" column="2">
      <layout class="QHBoxLayout" name="horizontalLayout_3">
       <item>
        <widget class="QSlider" name="horizontalSlider_a">
@@ -258,7 +231,7 @@
       </property>
      </widget>
     </item>
-    <item row="2" column="0">
+    <item row="3" column="0">
      <widget class="QGraphicsView" name="view_b">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
@@ -294,7 +267,7 @@
       </property>
      </widget>
     </item>
-    <item row="2" column="2">
+    <item row="3" column="2">
      <widget class="QGraphicsView" name="view_a">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
@@ -325,32 +298,49 @@
      </widget>
     </item>
     <item row="1" column="0">
-     <layout class="QHBoxLayout" name="horizontalLayout_5">
+     <widget class="QGraphicsView" name="colour_view">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="horizontalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="interactive">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="2">
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
       <item>
-       <widget class="QGraphicsView" name="colour_view">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
+       <widget class="QSlider" name="horizontalSlider_c">
+        <property name="maximum">
+         <number>255</number>
         </property>
+        <property name="pageStep">
+         <number>16</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_value_c">
         <property name="minimumSize">
          <size>
-          <width>256</width>
-          <height>1</height>
+          <width>30</width>
+          <height>0</height>
          </size>
-        </property>
-        <property name="frameShape">
-         <enum>QFrame::NoFrame</enum>
-        </property>
-        <property name="verticalScrollBarPolicy">
-         <enum>Qt::ScrollBarAlwaysOff</enum>
-        </property>
-        <property name="horizontalScrollBarPolicy">
-         <enum>Qt::ScrollBarAlwaysOff</enum>
-        </property>
-        <property name="interactive">
-         <bool>false</bool>
         </property>
        </widget>
       </item>
