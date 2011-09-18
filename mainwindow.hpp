@@ -43,6 +43,7 @@ public:
 	explicit MainWindow(QWidget *parent = NULL);
 
 public slots:
+	void first_frame(void);
 	void start_generating(void);
 	void generate_images(void);
 

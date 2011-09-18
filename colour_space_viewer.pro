@@ -38,3 +38,8 @@ HEADERS += \
 
 FORMS += \
 	mainwindow.ui
+
+RESOURCES += \
+	colour_space_viewer.qrc
+
+win32:RC_FILE = colour_space_viewer.rc

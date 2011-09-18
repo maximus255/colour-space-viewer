@@ -61,15 +61,19 @@ MainWindow::MainWindow(QWidget *parent)
 	line_c_a = scene_c->addLine(  0,255,255,255,QPen(Qt::black,1));
 	line_c_b = scene_c->addLine(  0,  0,  0,255,QPen(Qt::black,1));
 
-	colour_scene->setSceneRect(0,0,colour_view->width(),colour_view->height());
-	colour_sample = colour_scene->addRect(0,0,colour_view->width(),colour_view->height(),Qt::NoPen);
-
 
 	__to_rgba = boost::bind(&MainWindow::rgb_to_rgba,this,_1,_2,_3,_4,_5,_6,_7);
 
 	connect(generator_timer, SIGNAL(timeout()), this, SLOT(generate_images()));
 
-	QTimer::singleShot(0,this,SLOT(start_generating()));
+	QTimer::singleShot(0,this,SLOT(first_frame()));
+}
+
+void MainWindow::first_frame(void)
+{
+	colour_scene->setSceneRect(0,0,colour_view->width(),colour_view->height());
+	colour_sample = colour_scene->addRect(0,0,colour_view->width(),colour_view->height(),Qt::NoPen);
+	start_generating();
 }
 
 void MainWindow::start_generating(void)
