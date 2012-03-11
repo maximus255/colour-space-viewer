@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>524</width>
-    <height>582</height>
+    <width>531</width>
+    <height>581</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -175,7 +175,7 @@
      </layout>
     </item>
     <item row="0" column="2">
-     <widget class="QGraphicsView" name="view_c">
+     <widget class="ColourPlaneView" name="view_c">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
         <horstretch>0</horstretch>
@@ -211,7 +211,7 @@
      </widget>
     </item>
     <item row="3" column="0">
-     <widget class="QGraphicsView" name="view_b">
+     <widget class="ColourPlaneView" name="view_b">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
         <horstretch>0</horstretch>
@@ -247,7 +247,7 @@
      </widget>
     </item>
     <item row="3" column="2">
-     <widget class="QGraphicsView" name="view_a">
+     <widget class="ColourPlaneView" name="view_a">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
         <horstretch>0</horstretch>
@@ -336,6 +336,16 @@
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>ColourPlaneView</class>
+   <extends>QGraphicsView</extends>
+   <header location="global">colourplaneview.hpp</header>
+   <slots>
+    <signal>mouseDragged(QPoint)</signal>
+   </slots>
+  </customwidget>
+ </customwidgets>
  <resources>
   <include location="colour_space_viewer.qrc"/>
  </resources>
@@ -347,8 +357,8 @@
    <slot>setNum(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>484</x>
-     <y>370</y>
+     <x>485</x>
+     <y>286</y>
     </hint>
     <hint type="destinationlabel">
      <x>509</x>
@@ -363,8 +373,8 @@
    <slot>update_c(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>484</x>
-     <y>370</y>
+     <x>485</x>
+     <y>286</y>
     </hint>
     <hint type="destinationlabel">
      <x>226</x>
@@ -411,8 +421,8 @@
    <slot>set_colourspace_hsl()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>26</x>
-     <y>105</y>
+     <x>42</x>
+     <y>93</y>
     </hint>
     <hint type="destinationlabel">
      <x>0</x>
@@ -427,8 +437,8 @@
    <slot>set_colourspace_ycbcr()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>94</x>
-     <y>116</y>
+     <x>110</x>
+     <y>115</y>
     </hint>
     <hint type="destinationlabel">
      <x>0</x>
@@ -443,12 +453,12 @@
    <slot>setNum(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>484</x>
-     <y>743</y>
+     <x>485</x>
+     <y>572</y>
     </hint>
     <hint type="destinationlabel">
-     <x>518</x>
-     <y>743</y>
+     <x>522</x>
+     <y>572</y>
     </hint>
    </hints>
   </connection>
@@ -459,12 +469,12 @@
    <slot>setNum(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>199</x>
-     <y>743</y>
+     <x>213</x>
+     <y>572</y>
     </hint>
     <hint type="destinationlabel">
-     <x>258</x>
-     <y>743</y>
+     <x>260</x>
+     <y>572</y>
     </hint>
    </hints>
   </connection>
@@ -475,8 +485,8 @@
    <slot>update_b(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>138</x>
-     <y>743</y>
+     <x>161</x>
+     <y>572</y>
     </hint>
     <hint type="destinationlabel">
      <x>144</x>
@@ -491,8 +501,8 @@
    <slot>update_a(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>484</x>
-     <y>743</y>
+     <x>485</x>
+     <y>572</y>
     </hint>
     <hint type="destinationlabel">
      <x>325</x>
@@ -507,12 +517,60 @@
    <slot>set_colourspace_hcy()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>21</x>
-     <y>144</y>
+     <x>37</x>
+     <y>137</y>
     </hint>
     <hint type="destinationlabel">
-     <x>-2</x>
+     <x>0</x>
      <y>146</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>view_a</sender>
+   <signal>mouseDragged(QPoint)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>update_bc(QPoint)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>515</x>
+     <y>415</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>528</x>
+     <y>416</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>view_b</sender>
+   <signal>mouseDragged(QPoint)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>update_ac(QPoint)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>256</x>
+     <y>381</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>264</x>
+     <y>382</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>view_c</sender>
+   <signal>mouseDragged(QPoint)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>update_ab(QPoint)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>514</x>
+     <y>164</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>528</x>
+     <y>165</y>
     </hint>
    </hints>
   </connection>
@@ -526,5 +584,8 @@
   <slot>update_b(int)</slot>
   <slot>update_c(int)</slot>
   <slot>set_colourspace_hcy()</slot>
+  <slot>update_ab(QPoint)</slot>
+  <slot>update_ac(QPoint)</slot>
+  <slot>update_bc(QPoint)</slot>
  </slots>
 </ui>

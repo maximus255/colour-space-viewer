@@ -2,7 +2,7 @@
 **
 ** Project:      Colour-space-viewer
 ** File info:    $Id$
-** Author:       Copyright (C) 2011 Kuzma Shapran <Kuzma.Shapran@gmail.com>
+** Author:       Copyright (C) 2011-2012 Kuzma Shapran <Kuzma.Shapran@gmail.com>
 ** License:      GPLv3
 **
 **  This file is part of Colour-space-viewer.
@@ -56,6 +56,10 @@ public slots:
 	void update_a(int);
 	void update_b(int);
 	void update_c(int);
+
+	void update_ab(const QPoint&);
+	void update_bc(const QPoint&);
+	void update_ac(const QPoint&);
 
 private:
 	QImage image[3][256];

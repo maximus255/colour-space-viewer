@@ -31,10 +31,12 @@ QT += core gui
 
 SOURCES += \
 	main.cpp\
-	mainwindow.cpp
+	mainwindow.cpp \
+    colourplaneview.cpp
 
 HEADERS += \
-	mainwindow.hpp
+	mainwindow.hpp \
+    colourplaneview.hpp
 
 FORMS += \
 	mainwindow.ui

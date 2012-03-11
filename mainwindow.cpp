@@ -2,7 +2,7 @@
 **
 ** Project:      Colour-space-viewer
 ** File info:    $Id$
-** Author:       Copyright (C) 2011 Kuzma Shapran <Kuzma.Shapran@gmail.com>
+** Author:       Copyright (C) 2011-2012 Kuzma Shapran <Kuzma.Shapran@gmail.com>
 ** License:      GPLv3
 **
 **  This file is part of Colour-space-viewer.
@@ -138,6 +138,7 @@ void MainWindow::generate_images()
 
 void MainWindow::update_a(int value)
 {
+	value = qMin(qMax(value, 0), 255);
 	pixmap_a->setPixmap(QPixmap::fromImage(image[0][value]));
 	line_b_a->setLine(255-value,0,255-value,255);
 	line_c_a->setLine(0,255-value,255,255-value);
@@ -146,6 +147,7 @@ void MainWindow::update_a(int value)
 
 void MainWindow::update_b(int value)
 {
+	value = qMin(qMax(value, 0), 255);
 	pixmap_b->setPixmap(QPixmap::fromImage(image[1][value]));
 	line_a_b->setLine(value,0,value,255);
 	line_c_b->setLine(value,0,value,255);
@@ -154,10 +156,29 @@ void MainWindow::update_b(int value)
 
 void MainWindow::update_c(int value)
 {
+	value = qMin(qMax(value, 0), 255);
 	pixmap_c->setPixmap(QPixmap::fromImage(image[2][value]));
 	line_a_c->setLine(0,value,255,value);
 	line_b_c->setLine(0,value,255,value);
 	colour_sample->setBrush(QBrush(QColor(convert_colour(horizontalSlider_a->value(),horizontalSlider_b->value(),horizontalSlider_c->value()))));
+}
+
+void MainWindow::update_ab(const QPoint& pos)
+{
+	horizontalSlider_a->setValue(255-pos.y());
+	horizontalSlider_b->setValue(pos.x());
+}
+
+void MainWindow::update_bc(const QPoint& pos)
+{
+	horizontalSlider_b->setValue(pos.x());
+	horizontalSlider_c->setValue(pos.y());
+}
+
+void MainWindow::update_ac(const QPoint& pos)
+{
+	horizontalSlider_a->setValue(255-pos.x());
+	horizontalSlider_c->setValue(pos.y());
 }
 
 QRgb MainWindow::convert_colour(int in0, int in1, int in2)
