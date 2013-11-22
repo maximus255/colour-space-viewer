@@ -24,7 +24,7 @@
 
 #include "colourplaneview.hpp"
 
-#include <QtGui/QMouseEvent>
+#include <QMouseEvent>
 
 ColourPlaneView::ColourPlaneView(QWidget *parent)
 	: QGraphicsView(parent)

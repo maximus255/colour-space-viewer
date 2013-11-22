@@ -29,19 +29,25 @@ TEMPLATE = app
 
 QT += core gui
 
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+
 SOURCES += \
 	main.cpp\
 	mainwindow.cpp \
-    colourplaneview.cpp
+	colourplaneview.cpp
 
 HEADERS += \
 	mainwindow.hpp \
-    colourplaneview.hpp
+	colourplaneview.hpp
 
 FORMS += \
 	mainwindow.ui
 
 RESOURCES += \
 	colour_space_viewer.qrc
+
+OTHER_FILES += \
+	colour_space_viewer.rc \
+	icon.ico
 
 win32:RC_FILE = colour_space_viewer.rc

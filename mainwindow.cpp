@@ -22,10 +22,10 @@
 **
 *************/
 
-#include <QtCore/QTimer>
-#include <QtGui/QGraphicsScene>
-#include <QtGui/QGraphicsPixmapItem>
-#include <QtGui/QGraphicsLineItem>
+#include <QTimer>
+#include <QGraphicsScene>
+#include <QGraphicsPixmapItem>
+#include <QGraphicsLineItem>
 
 #include <boost/bind.hpp>
 

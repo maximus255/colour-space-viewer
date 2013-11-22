@@ -26,7 +26,7 @@
 #ifndef COLOURPLANEVIEW_HPP
 #define COLOURPLANEVIEW_HPP
 
-#include <QtGui/QGraphicsView>
+#include <QGraphicsView>
 
 class ColourPlaneView : public QGraphicsView
 {
